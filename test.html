@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Percabangan IF-ELSE 3</title>
+</head>
+<body background="">
+	<script language="JavaScript">
+		function hitungip()
+		{
+			var kehadiran=parseFloat(document.fform.ikehadiran.value);
+			var quis=parseFloat(document.fform.iquis.value);
+			var tugas=parseFloat(document.fform.itugas.value);
+			var uts=parseFloat(document.fform.iuts.value);
+			var uas=parseFloat(document.fform.iuas.value);
+			var ip="";
+			var ket="";
+			var na=(0.10*kehadiran)+(0.15*quis)+(0.20*tugas)+(0.25*uts)+(0.30*uas);
+			if ((na>80) && (na<=100)) {
+				ip="A"
+				ket="Lulus dengan Sangat Baik";}
+				else if((na>68) && (na<=80)){
+					ip="B"
+					ket="Lulus dengan Baik";}
+					else if((na>55) && (na<=68)) {
+						ip="C"
+						ket="Lulus dengan Cukup";}
+						else if((na>38) && (na<=55)) {
+							ip="D"
+							ket="Lulus dengan Kurang";}
+							else{
+								ip="E"
+								ket="Tidak Lulus";}
+								document.fform.oip.value=ip;
+								document.fform.oket.value=ket;
+		}
+	</script>
+	<form name ="fform">
+		<table border="20" width="70%" bgcolor="orange" align="center">
+		<tr>
+		<td width="70%" colspan="5" bgcolor="orange"><h2 align="center"> Menghitung Indeks Prestasi Teknik Komputer </h2></td>
+		</tr><tr>
+		<td width="25%"> KEHADIRAN (10%) 	: <input type="text" size="10" name="ikehadiran"></td>
+		<td width="25%"> QUIS (15%) 		: <input type="text" size="10" name="iquis"></td>
+		<td width="25%"> TUGAS (20%) 		: <input type="text" size="10" name="itugas"></td>
+		<td width="25%"> UTS (25%) 			: <input type="text" size="10" name="iuts"></td>
+		<td width="25%"> UAS (30%) 			: <input type="text" size="10" name="iuas"></td></tr>
+		<tr>
+			<td width="70%" colspan="5" bgcolor="orange"><p align="center">
+				<input type="Button" value="Hitung" onclick="hitungip()">
+				<input type="Reset" value="Ulang"></p></td>
+			</tr><tr>
+				<td width="70%" colspan="5" bgcolor="orange" align="center">
+					Indeks Prestasi :  <input type="text" size="10" name="oip">
+					Keterangan		:  <input type="text" size="25" name="oket"></td>
+					</tr>
+		</form>
+		</body>
+		</html>
